@@ -19,11 +19,17 @@
     <a href="">test</a>
     <a href="">test</a>
 
-    <form action="">
+    <form
+      method="post"
+      class="gform"
+      action="https://script.google.com/macros/s/AKfycbyInQlj-dkvoxlG5UAL_BAY3xASOIOUayqBswXFZn8Tm-yyI7bteJ_e7e76ag0ku34/exec"
+      target="frAttachFiles"
+      data-email="saewa0424@gmail.com"
+    >
       <fieldset>
         <legend>A survey to check the schedule.</legend>
 
-        <section data-title="section01" id="section01">
+        <section id="section01">
           10月3日から10月10日まで日本に行く予定を立てています。
           まだ確定ではないので、アンケートによって決めます。
           私が日本に行く目的は「皆と会うため」なので、日程のためにもアンケートをしたいと思います。
@@ -31,10 +37,16 @@
           <ul class="caution">
             <li>祝日・週末は日程が詰まる可能性が高いです。</li>
             <li>このフォームはスマートフォンに最適されています。</li>
+            <li>
+              必ず、<samp>input</samp>
+              を入力してください。入力しなくてもnextボタンが動きます。
+            </li>
           </ul>
 
           <p class="button-wrap">
-            <button type="button" data-target="#section02">next</button>
+            <button type="button" class="button" data-target="#section02">
+              next
+            </button>
           </p>
         </section>
 
@@ -46,21 +58,29 @@
 
           <article>
             <div class="input-box">
-              <input type="radio" name="meet" id="meet_yes" />
+              <input type="radio" name="meet" id="meet_yes" value="会う。" />
               <label for="meet_yes">会う。</label>
             </div>
             <div class="input-box">
-              <input type="radio" name="meet" id="meet_no" />
+              <input type="radio" name="meet" id="meet_no" value="会えない。" />
               <label for="meet_no">会えない。</label>
             </div>
           </article>
 
           <p class="button-wrap">
-            <button type="button" id="test">next</button>
+            <button type="button" class="prev">prev</button>
+            <button
+              type="button"
+              class="button"
+              id="test"
+              data-target="#section03"
+            >
+              next
+            </button>
           </p>
         </section>
 
-        <section data-title="section03">
+        <section data-title="section03" id="section03">
           <div>
             <span>Question 02</span>
             <h2>私とどのような形で会いたいですか？</h2>
@@ -71,11 +91,21 @@
 
           <article>
             <div class="input-box">
-              <input type="radio" name="howtomeet" id="private" />
+              <input
+                type="radio"
+                name="how_to_meet"
+                id="private"
+                value="個別"
+              />
               <label for="private">個別</label>
             </div>
             <div class="input-box">
-              <input type="radio" name="howtomeet" id="group" />
+              <input
+                type="radio"
+                name="how_to_meet"
+                id="group"
+                value="グループ"
+              />
               <label for="group"
                 >グループ（山田、ラン、青山等...自由にチームを組む）</label
               >
@@ -84,7 +114,7 @@
                 <label for="group_name">グループ参加者</label>
                 <input
                   type="text"
-                  name=""
+                  name="group_user_list"
                   id="group_name"
                   placeholder="山田、ラン、青山等..."
                 />
@@ -93,7 +123,8 @@
           </article>
 
           <p class="button-wrap">
-            <button type="button">next</button>
+            <button type="button" class="prev">prev</button>
+            <button type="button" class="button" id="testButton">next</button>
           </p>
         </section>
 
@@ -105,17 +136,22 @@
 
           <article>
             <div class="input-box">
-              <input type="radio" name="holiday" id="holiday_yes" />
+              <input
+                type="radio"
+                name="holiday"
+                id="holiday_yes"
+                value="ある"
+              />
               <label for="holiday_yes">ある</label>
             </div>
             <div class="input-box">
-              <input type="radio" name="holiday" id="holiday_no" />
+              <input type="radio" name="holiday" id="holiday_no" value="ない" />
               <label for="holiday_no">ない</label>
             </div>
           </article>
 
           <p class="button-wrap">
-            <button type="button">next</button>
+            <button type="button" class="button">next</button>
           </p>
         </section>
 
@@ -128,14 +164,18 @@
           <article>
             <div class="input-box">
               <label for="meet_oneday">１日</label>
-              <input type="datetime-local" name="" id="meet_oneday" />
+              <input
+                type="datetime-local"
+                name="meet_date_oneday"
+                id="meet_oneday"
+              />
             </div>
 
             <div class="input-box">
               <label for="meet_twoday">２日以上</label>
               <input
                 type="text"
-                name=""
+                name="meet_date_twoday"
                 id="meet_twoday"
                 placeholder="10/3、10/10, 10/4~10/5 等"
               />
@@ -143,7 +183,7 @@
           </article>
 
           <p class="button-wrap">
-            <button type="button">next</button>
+            <button type="button" class="button">next</button>
           </p>
         </section>
 
@@ -157,24 +197,38 @@
             <div class="input-box">
               <input
                 type="text"
-                name="your_name"
+                name="username"
                 id="holiday_yes"
                 title="name"
                 placeholder="ex: やまだ、ヤマダ、山田OK"
+                required
               />
             </div>
           </article>
 
           <p class="button-wrap">
-            <button type="button">Submit</button>
+            <button type="submit">Submit</button>
           </p>
         </section>
 
         <!-- ありがとうございます！検討後、連絡しますね！ -->
         <!--  -->
+
+        <div style="display: none" class="thankyou_message">
+          <h2>
+            <em>Thanks</em> for contacting us! We will get back to you soon!
+          </h2>
+        </div>
       </fieldset>
     </form>
 
-    <script src="main.js"></script>
+    <iframe id="iframe1" name="iframe1" style="display: none"></iframe>
+
+    <script
+      data-cfasync="false"
+      type="text/javascript"
+      src="js/form-handler.js"
+    ></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
