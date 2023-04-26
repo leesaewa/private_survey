@@ -1,3 +1,20 @@
+// variable
+$colorWhite: #fff;
+$colorBlack: #000;
+//
+
 .caution {
   font-family: "material icons";
+}
+
+section {
+  background-color: $colorWhite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#section01 {
+  z-index: 1;
 }

@@ -13,11 +13,17 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <button>test</button>
+    <a href="">test</a>
+    <a href="">test</a>
+    <a href="">test</a>
+    <a href="">test</a>
+
     <form action="">
       <fieldset>
         <legend>A survey to check the schedule.</legend>
 
-        <section>
+        <section data-title="section01" id="section01">
           10月3日から10月10日まで日本に行く予定を立てています。
           まだ確定ではないので、アンケートによって決めます。
           私が日本に行く目的は「皆と会うため」なので、日程のためにもアンケートをしたいと思います。
@@ -28,11 +34,11 @@
           </ul>
 
           <p class="button-wrap">
-            <button type="button">next</button>
+            <button type="button" data-target="#section02">next</button>
           </p>
         </section>
 
-        <section>
+        <section data-title="section02" id="section02">
           <div>
             <span>Question 01</span>
             <h2>私と会いたいですか？</h2>
@@ -50,16 +56,16 @@
           </article>
 
           <p class="button-wrap">
-            <button type="button">next</button>
+            <button type="button" id="test">next</button>
           </p>
         </section>
 
-        <section>
+        <section data-title="section03">
           <div>
             <span>Question 02</span>
             <h2>私とどのような形で会いたいですか？</h2>
             <p class="caution">
-              error 2人以上は「グループ」でチェックお願いします。
+              error 2人以上は「グループ」にチェックお願いします。
             </p>
           </div>
 
@@ -91,7 +97,7 @@
           </p>
         </section>
 
-        <section>
+        <section data-title="section0">
           <div>
             <span>Question 03</span>
             <h2>私と会うために有休を取る気はありますか？</h2>
@@ -113,7 +119,7 @@
           </p>
         </section>
 
-        <section>
+        <section data-title="section0">
           <div>
             <span>Question 04</span>
             <h2>希望する日を入力してください。</h2>
@@ -141,10 +147,10 @@
           </p>
         </section>
 
-        <section>
+        <section data-title="section0" id="sectionLast">
           <div>
-            <span>Question 05</span>
-            <h2>最後にあなたの名前を教えてください。</h2>
+            <span>Last Question</span>
+            <h2>あなたの名前を教えてください。</h2>
           </div>
 
           <article>
@@ -168,5 +174,7 @@
         <!--  -->
       </fieldset>
     </form>
+
+    <script src="main.js"></script>
   </body>
 </html>
