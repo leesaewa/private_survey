@@ -1,6 +1,5 @@
 const ACTIVE = "active";
 const button = document.querySelectorAll("[data-target]");
-let value = "";
 
 button.forEach((btn) => {
   btn.addEventListener("click", (e) => {
@@ -10,6 +9,7 @@ button.forEach((btn) => {
 
     noMeetHandler();
     groupHandler();
+    reasonHandler();
   });
 });
 
@@ -28,15 +28,15 @@ const noMeetHandler = () => {
   });
 };
 
-//
+//input text 입력했는지 체크
 
 // group 체크했을 때 입력창 나타났다가 체크 해제하면 사라짐
 const groupHandler = () => {
   const group = document.getElementById("group");
   const private = document.getElementById("private");
   const checkYes = document.querySelector(".check-yes");
-  const groupName = document.getElementById("group_name");
   const groupBtn = document.getElementById("groupBtn");
+  const groupName = document.getElementById("group_name");
 
   group.addEventListener("click", () => {
     const isCheck = group.checked;
@@ -61,6 +61,41 @@ const groupHandler = () => {
       groupName.required = false;
       checkYes.style.display = "none";
       groupBtn.disabled = false;
+    }
+  });
+};
+
+// 그 날 밖에 안 된다에 체크했을 때 입력창 나타났다가 체크 해제하면 사라짐
+const reasonHandler = () => {
+  const dateNo = document.getElementById("date_no");
+  const dateOk = document.getElementById("date_ok");
+  const checkYes = document.querySelector(".date-yes");
+  const dateBtn = document.getElementById("dateBtn");
+  const dateReason = document.getElementById("date_reason");
+
+  dateNo.addEventListener("click", () => {
+    const isCheck = dateNo.checked;
+    if (isCheck === true) {
+      dateReason.required = true;
+      checkYes.style.display = "block";
+      dateBtn.disabled = true;
+
+      dateReason.addEventListener("keyup", () => {
+        if (!dateReason.value) {
+          dateBtn.disabled = true;
+        } else {
+          dateBtn.disabled = false;
+        }
+      });
+    }
+  });
+
+  dateOk.addEventListener("click", () => {
+    const isCheck = dateOk.checked;
+    if (isCheck === true) {
+      dateReason.required = false;
+      checkYes.style.display = "none";
+      dateBtn.disabled = false;
     }
   });
 };
