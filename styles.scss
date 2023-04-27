@@ -237,6 +237,12 @@ body {
         section {
           height: 94%;
           overflow-y: scroll;
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
         }
 
         h1 {
