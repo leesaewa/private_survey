@@ -1,27 +1,12 @@
-// const ACTIVE = "active";
-// const button = document.querySelectorAll(".button");
-// const sec1 = document.getElementById("section01");
-// const sec2 = document.getElementById("section02");
-// const sec3 = document.getElementById("section03");
-// const section = document.querySelectorAll("section");
-// const input = document.querySelectorAll("input");
+const ACTIVE = "active";
+const button = document.querySelectorAll("[data-target]");
+let value = "";
 
-// button.forEach((btn) => {
-//   btn.addEventListener("click", () => {
-//     console.log("test");
-//     section.forEach((sec) => {
-//       sec.style.display = "block";
-//     });
-//   });
-// });
-
-const testBtn = document.querySelectorAll("[data-target]");
-
-testBtn.forEach((btn) => {
+button.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.preventDefault();
-    const test = document.querySelector(btn.dataset.target);
-    test.classList.add("active");
+    const dataLink = document.querySelector(btn.dataset.target);
+    dataLink.classList.add(ACTIVE);
 
     noMeetHandler();
     groupHandler();
@@ -38,7 +23,7 @@ const noMeetHandler = () => {
     const isCheck = checkNo.checked;
     if (isCheck === true) {
       console.log("true");
-      sectionLast.style.zIndex = Z_INDEX;
+      sectionLast.classList.add(ACTIVE);
     }
   });
 };
@@ -49,15 +34,24 @@ const noMeetHandler = () => {
 const groupHandler = () => {
   const group = document.getElementById("group");
   const private = document.getElementById("private");
+  const checkYes = document.querySelector(".check-yes");
   const groupName = document.getElementById("group_name");
-  const testButton = document.getElementById("testButton");
+  const groupBtn = document.getElementById("groupBtn");
 
   group.addEventListener("click", () => {
     const isCheck = group.checked;
     if (isCheck === true) {
       groupName.required = true;
-      groupName.style.display = "block";
-      testButton.disabled = true;
+      checkYes.style.display = "block";
+      groupBtn.disabled = true;
+
+      groupName.addEventListener("keyup", () => {
+        if (!groupName.value) {
+          groupBtn.disabled = true;
+        } else {
+          groupBtn.disabled = false;
+        }
+      });
     }
   });
 
@@ -65,8 +59,8 @@ const groupHandler = () => {
     const isCheck = private.checked;
     if (isCheck === true) {
       groupName.required = false;
-      groupName.style.display = "none";
-      testButton.disabled = false;
+      checkYes.style.display = "none";
+      groupBtn.disabled = false;
     }
   });
 };

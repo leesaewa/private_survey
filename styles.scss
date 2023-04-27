@@ -1,32 +1,118 @@
 // variable
 $colorWhite: #fff;
 $colorBlack: #000;
+$colorMain: #674188;
+$colorSub: #fffbf5;
+// $colorPoint:;
+
+// mixin
+@mixin flex(
+  $flex: flex,
+  $ver: false,
+  $hor: false,
+  $direction: false,
+  $wrap: false
+) {
+  @if $flex {
+    display: $flex;
+  }
+  @if $ver {
+    align-items: $ver;
+  }
+  @if $hor {
+    justify-content: $hor;
+  }
+  @if $direction {
+    flex-direction: $direction;
+  }
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
+}
 //
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  div,
+  p,
+  h2 {
+    margin: 0;
+  }
+  button {
+    border: 0;
+    @include flex($ver: center, $hor: center);
+    cursor: pointer;
+    color: $colorWhite;
+    padding: 10px;
+    background-color: $colorMain;
+    width: 100%;
+    text-transform: uppercase;
+  }
+
+  form {
+    position: relative;
+    max-width: 640px;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+
+    fieldset {
+      all: unset;
+      background-color: $colorSub;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      &#section01 {
+        z-index: 1;
+
+        > legend {
+          position: static;
+        }
+      }
+      &.active {
+        z-index: 999;
+      }
+
+      legend {
+        position: absolute;
+        top: -50%;
+      }
+
+      //   button
+      .button-wrap {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+}
+
+em {
+  font-style: normal;
+}
 
 .caution {
   font-family: "material icons";
 }
 
-fieldset {
-  display: none;
-  background-color: $colorWhite;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-#section01 {
-  display: block;
-  z-index: 1;
-}
-
-.active {
-  display: block;
-  z-index: 999;
-}
-
 .thankyou_message {
   position: relative;
   z-index: 999;
+}
+
+.check-yes {
+  display: none;
 }

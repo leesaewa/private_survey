@@ -23,9 +23,11 @@
       <fieldset id="section01">
         <legend>A survey to check the schedule.</legend>
 
-        10月3日から10月10日まで日本に行く予定を立てています。
-        まだ確定ではないので、アンケートによって決めます。
-        私が日本に行く目的は「皆と会うため」なので、日程のためにもアンケートをしたいと思います。
+        <div class="text-box">
+          <em>10月3日から10月10日まで</em>日本に行く予定を立てています。
+          まだ確定ではないので、アンケートによって決めます。
+          私が日本に行く目的は「皆と会うため」なので、日程のためにもアンケートをしたいと思います。
+        </div>
 
         <ul class="caution">
           <li>祝日・週末は日程が詰まる可能性が高いです。</li>
@@ -38,9 +40,7 @@
         </ul>
 
         <p class="button-wrap">
-          <button type="button" class="button" data-target="#section02">
-            next
-          </button>
+          <button type="button" data-target="#section02">next</button>
         </p>
       </fieldset>
 
@@ -54,22 +54,29 @@
 
         <article>
           <div class="input-box">
-            <input type="radio" name="meet" id="meet_yes" value="会う。" />
+            <input
+              type="radio"
+              name="meet"
+              id="meet_yes"
+              value="会う。"
+              required
+            />
             <label for="meet_yes">会う。</label>
           </div>
           <div class="input-box">
-            <input type="radio" name="meet" id="meet_no" value="会えない。" />
+            <input
+              type="radio"
+              name="meet"
+              id="meet_no"
+              value="会えない。"
+              required
+            />
             <label for="meet_no">会えない。</label>
           </div>
         </article>
 
         <p class="button-wrap">
-          <button
-            type="button"
-            class="button"
-            id="noBtn"
-            data-target="#section03"
-          >
+          <button type="button" id="noBtn" data-target="#section03">
             next
           </button>
         </p>
@@ -115,7 +122,7 @@
         </article>
 
         <p class="button-wrap">
-          <button type="button" class="button" data-target="#section04">
+          <button type="button" id="groupBtn" data-target="#section04">
             next
           </button>
         </p>
@@ -141,9 +148,7 @@
         </article>
 
         <p class="button-wrap">
-          <button type="button" class="button" data-target="#section05">
-            next
-          </button>
+          <button type="button" data-target="#section05">next</button>
         </p>
       </fieldset>
 
@@ -177,9 +182,7 @@
         </article>
 
         <p class="button-wrap">
-          <button type="submit" class="button" data-target="#sectionLast">
-            next
-          </button>
+          <button type="submit" data-target="#sectionLast">next</button>
         </p>
       </fieldset>
 
