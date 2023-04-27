@@ -14,7 +14,8 @@ body div,
 body ul,
 body li,
 body p,
-body samp {
+body samp,
+body section {
   font-size: 16px;
   line-height: 2rem;
   letter-spacing: 1px;
@@ -178,7 +179,11 @@ body form fieldset > article .input-box:not(:last-child) {
 body form fieldset#section01 {
   z-index: 1;
 }
-body form fieldset#section01 > h1 {
+body form fieldset#section01 section {
+  height: 94%;
+  overflow-y: scroll;
+}
+body form fieldset#section01 h1 {
   color: #674188;
   text-align: center;
   border-bottom: 1px solid #674188;

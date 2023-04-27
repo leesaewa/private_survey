@@ -47,7 +47,8 @@ body {
   ul,
   li,
   p,
-  samp {
+  samp,
+  section {
     font-size: 16px;
     line-height: 2rem;
     letter-spacing: 1px;
@@ -233,7 +234,12 @@ body {
       &#section01 {
         z-index: 1;
 
-        > h1 {
+        section {
+          height: 94%;
+          overflow-y: scroll;
+        }
+
+        h1 {
           color: $colorMain;
           text-align: center;
           border-bottom: 1px solid $colorMain;

@@ -23,24 +23,27 @@
       <fieldset id="section01">
         <legend>A survey to check the schedule.</legend>
 
-        <h1>A survey to check the schedule.</h1>
+        <section>
+          <h1>A survey to check the schedule.</h1>
 
-        <div class="text-box">
-          こんにちは。<br />今、日本に行く計画を立てているところですが、私が日本に行く目的は<em>「皆と会うため」</em>なので、日程を決めるためにアンケートをしたいと思います。<br />
-          <em>10月3日から10月10日まで</em>の期間の中で決めようと思います。<br />
-          下記の注意事項をご確認後、Nextボタンを押してください。
-        </div>
+          <div class="text-box">
+            こんにちは。<br />今、日本に行く計画を立てているところですが、私が日本に行く目的は<em>「皆と会うため」</em>なので、日程を決めるためにアンケートをしたいと思います。<br />
+            期間は<em>10月3日から10月10日まで</em>の中で決めようと思います。<br />
+            下記の注意事項をご確認後、Nextボタンを押してください。
+          </div>
 
-        <h3>注意事項</h3>
-        <ul>
-          <li>祝日・週末は日程が詰まる可能性が高いです。</li>
-          <li>編集ができないため、慎重に答えてください。</li>
-          <li>
-            必ず、<samp>input</samp>
-            を入力してください。入力しなくても<samp>next</samp>ボタンが動きます。
-          </li>
-          <li>このフォームはスマートフォンに最適されています。</li>
-        </ul>
+          <h3>注意事項</h3>
+          <ul>
+            <li>祝日・週末は日程が詰まる可能性が高いです。</li>
+            <li>編集ができないため、慎重に答えてください。</li>
+            <li>
+              必ず、<samp>input(空白)</samp>
+              を入力してください。入力しなくても<samp>next</samp>ボタンが動きます。
+            </li>
+            <li>時間順にスケジュールを決めます。</li>
+            <li>このフォームはスマートフォンに最適されています。</li>
+          </ul>
+        </section>
 
         <p class="button-wrap">
           <button type="button" data-target="#section02">next</button>
@@ -294,6 +297,7 @@
               id="holiday_yes"
               title="name"
               placeholder="ex: やまだ、ヤマダ、山田OK"
+              required
             />
           </div>
         </article>
