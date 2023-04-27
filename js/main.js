@@ -1,54 +1,51 @@
-const Z_INDEX = "999";
-const button = document.querySelectorAll(".button");
-const sec1 = document.getElementById("section01");
-const sec2 = document.getElementById("section02");
-const sec3 = document.getElementById("section03");
-const section = document.querySelectorAll("section");
+// const ACTIVE = "active";
+// const button = document.querySelectorAll(".button");
+// const sec1 = document.getElementById("section01");
+// const sec2 = document.getElementById("section02");
+// const sec3 = document.getElementById("section03");
+// const section = document.querySelectorAll("section");
+// const input = document.querySelectorAll("input");
 
-button.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    console.log("test");
-    section.forEach((sec) => {
-      sec.style.display = "block";
-    });
-  });
-});
-
-const testFunction = () => {
-  alert("check");
-};
+// button.forEach((btn) => {
+//   btn.addEventListener("click", () => {
+//     console.log("test");
+//     section.forEach((sec) => {
+//       sec.style.display = "block";
+//     });
+//   });
+// });
 
 const testBtn = document.querySelectorAll("[data-target]");
-const prev = document.querySelectorAll(".prev");
 
 testBtn.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.preventDefault();
     const test = document.querySelector(btn.dataset.target);
+    test.classList.add("active");
 
-    if (test.style.zIndex == Z_INDEX) {
-      test.style.zIndex = 0;
-    } else {
-      test.style.zIndex = Z_INDEX;
-    }
+    noMeetHandler();
+    groupHandler();
   });
 });
 
-const checkNo = document.getElementById("meet_no");
-const checkBtn = document.getElementById("test");
-const sectionLast = document.getElementById("sectionLast");
+// 안 만난다 체크했을 때 제일 마지막 섹션으로 이동함
+const noMeetHandler = () => {
+  const checkNo = document.getElementById("meet_no");
+  const checkBtn = document.getElementById("noBtn");
+  const sectionLast = document.getElementById("sectionLast");
 
-checkBtn.addEventListener("click", () => {
-  const isCheck = checkNo.checked;
-  if (isCheck === true) {
-    console.log("true");
-
-    sectionLast.style.zIndex = Z_INDEX;
-  }
-});
+  checkBtn.addEventListener("click", () => {
+    const isCheck = checkNo.checked;
+    if (isCheck === true) {
+      console.log("true");
+      sectionLast.style.zIndex = Z_INDEX;
+    }
+  });
+};
 
 //
 
+// group 체크했을 때 입력창 나타났다가 체크 해제하면 사라짐
 const groupHandler = () => {
   const group = document.getElementById("group");
   const private = document.getElementById("private");
@@ -58,23 +55,14 @@ const groupHandler = () => {
   group.addEventListener("click", () => {
     const isCheck = group.checked;
     if (isCheck === true) {
-      console.log("success");
       groupName.required = true;
       groupName.style.display = "block";
       testButton.disabled = true;
-
-      // if (groupName.value.length == 0) {
-      //   alert("입력해주세요");
-      //   console.log(groupName.value.length);
-      // } else if (groupName.value.length == 20) {
-      //   testButton.disabled = false;
-      // }
     }
   });
 
   private.addEventListener("click", () => {
     const isCheck = private.checked;
-
     if (isCheck === true) {
       groupName.required = false;
       groupName.style.display = "none";
@@ -82,4 +70,3 @@ const groupHandler = () => {
     }
   });
 };
-groupHandler();

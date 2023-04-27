@@ -7,7 +7,8 @@ $colorBlack: #000;
   font-family: "material icons";
 }
 
-section {
+fieldset {
+  display: none;
   background-color: $colorWhite;
   position: absolute;
   top: 0;
@@ -16,5 +17,16 @@ section {
   height: 100%;
 }
 #section01 {
+  display: block;
   z-index: 1;
+}
+
+.active {
+  display: block;
+  z-index: 999;
+}
+
+.thankyou_message {
+  position: relative;
+  z-index: 999;
 }

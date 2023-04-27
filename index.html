@@ -13,12 +13,6 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <button>test</button>
-    <a href="">test</a>
-    <a href="">test</a>
-    <a href="">test</a>
-    <a href="">test</a>
-
     <form
       method="post"
       class="gform"
@@ -26,200 +20,203 @@
       target="frAttachFiles"
       data-email="saewa0424@gmail.com"
     >
-      <fieldset>
+      <fieldset id="section01">
         <legend>A survey to check the schedule.</legend>
 
-        <section id="section01">
-          10月3日から10月10日まで日本に行く予定を立てています。
-          まだ確定ではないので、アンケートによって決めます。
-          私が日本に行く目的は「皆と会うため」なので、日程のためにもアンケートをしたいと思います。
+        10月3日から10月10日まで日本に行く予定を立てています。
+        まだ確定ではないので、アンケートによって決めます。
+        私が日本に行く目的は「皆と会うため」なので、日程のためにもアンケートをしたいと思います。
 
-          <ul class="caution">
-            <li>祝日・週末は日程が詰まる可能性が高いです。</li>
-            <li>このフォームはスマートフォンに最適されています。</li>
-            <li>
-              必ず、<samp>input</samp>
-              を入力してください。入力しなくてもnextボタンが動きます。
-            </li>
-          </ul>
+        <ul class="caution">
+          <li>祝日・週末は日程が詰まる可能性が高いです。</li>
+          <li>編集ができないため、慎重に答えてください。</li>
+          <li>
+            必ず、<samp>input</samp>
+            を入力してください。入力しなくても<samp>next</samp>ボタンが動きます。
+          </li>
+          <li>このフォームはスマートフォンに最適されています。</li>
+        </ul>
 
-          <p class="button-wrap">
-            <button type="button" class="button" data-target="#section02">
-              next
-            </button>
-          </p>
-        </section>
-
-        <section data-title="section02" id="section02">
-          <div>
-            <span>Question 01</span>
-            <h2>私と会いたいですか？</h2>
-          </div>
-
-          <article>
-            <div class="input-box">
-              <input type="radio" name="meet" id="meet_yes" value="会う。" />
-              <label for="meet_yes">会う。</label>
-            </div>
-            <div class="input-box">
-              <input type="radio" name="meet" id="meet_no" value="会えない。" />
-              <label for="meet_no">会えない。</label>
-            </div>
-          </article>
-
-          <p class="button-wrap">
-            <button type="button" class="prev">prev</button>
-            <button
-              type="button"
-              class="button"
-              id="test"
-              data-target="#section03"
-            >
-              next
-            </button>
-          </p>
-        </section>
-
-        <section data-title="section03" id="section03">
-          <div>
-            <span>Question 02</span>
-            <h2>私とどのような形で会いたいですか？</h2>
-            <p class="caution">
-              error 2人以上は「グループ」にチェックお願いします。
-            </p>
-          </div>
-
-          <article>
-            <div class="input-box">
-              <input
-                type="radio"
-                name="how_to_meet"
-                id="private"
-                value="個別"
-              />
-              <label for="private">個別</label>
-            </div>
-            <div class="input-box">
-              <input
-                type="radio"
-                name="how_to_meet"
-                id="group"
-                value="グループ"
-              />
-              <label for="group"
-                >グループ（山田、ラン、青山等...自由にチームを組む）</label
-              >
-
-              <div class="check-yes">
-                <label for="group_name">グループ参加者</label>
-                <input
-                  type="text"
-                  name="group_user_list"
-                  id="group_name"
-                  placeholder="山田、ラン、青山等..."
-                />
-              </div>
-            </div>
-          </article>
-
-          <p class="button-wrap">
-            <button type="button" class="prev">prev</button>
-            <button type="button" class="button" id="testButton">next</button>
-          </p>
-        </section>
-
-        <section data-title="section0">
-          <div>
-            <span>Question 03</span>
-            <h2>私と会うために有休を取る気はありますか？</h2>
-          </div>
-
-          <article>
-            <div class="input-box">
-              <input
-                type="radio"
-                name="holiday"
-                id="holiday_yes"
-                value="ある"
-              />
-              <label for="holiday_yes">ある</label>
-            </div>
-            <div class="input-box">
-              <input type="radio" name="holiday" id="holiday_no" value="ない" />
-              <label for="holiday_no">ない</label>
-            </div>
-          </article>
-
-          <p class="button-wrap">
-            <button type="button" class="button">next</button>
-          </p>
-        </section>
-
-        <section data-title="section0">
-          <div>
-            <span>Question 04</span>
-            <h2>希望する日を入力してください。</h2>
-          </div>
-
-          <article>
-            <div class="input-box">
-              <label for="meet_oneday">１日</label>
-              <input
-                type="datetime-local"
-                name="meet_date_oneday"
-                id="meet_oneday"
-              />
-            </div>
-
-            <div class="input-box">
-              <label for="meet_twoday">２日以上</label>
-              <input
-                type="text"
-                name="meet_date_twoday"
-                id="meet_twoday"
-                placeholder="10/3、10/10, 10/4~10/5 等"
-              />
-            </div>
-          </article>
-
-          <p class="button-wrap">
-            <button type="button" class="button">next</button>
-          </p>
-        </section>
-
-        <section data-title="section0" id="sectionLast">
-          <div>
-            <span>Last Question</span>
-            <h2>あなたの名前を教えてください。</h2>
-          </div>
-
-          <article>
-            <div class="input-box">
-              <input
-                type="text"
-                name="username"
-                id="holiday_yes"
-                title="name"
-                placeholder="ex: やまだ、ヤマダ、山田OK"
-                required
-              />
-            </div>
-          </article>
-
-          <p class="button-wrap">
-            <button type="submit">Submit</button>
-          </p>
-        </section>
-
-        <!-- ありがとうございます！検討後、連絡しますね！ -->
-        <!--  -->
-
-        <div style="display: none" class="thankyou_message">
-          <h2>
-            <em>Thanks</em> for contacting us! We will get back to you soon!
-          </h2>
-        </div>
+        <p class="button-wrap">
+          <button type="button" class="button" data-target="#section02">
+            next
+          </button>
+        </p>
       </fieldset>
+
+      <fieldset id="section02">
+        <legend>私と会いたいですか？</legend>
+
+        <div>
+          <span>Question 01</span>
+          <h2>私と会いたいですか？</h2>
+        </div>
+
+        <article>
+          <div class="input-box">
+            <input type="radio" name="meet" id="meet_yes" value="会う。" />
+            <label for="meet_yes">会う。</label>
+          </div>
+          <div class="input-box">
+            <input type="radio" name="meet" id="meet_no" value="会えない。" />
+            <label for="meet_no">会えない。</label>
+          </div>
+        </article>
+
+        <p class="button-wrap">
+          <button
+            type="button"
+            class="button"
+            id="noBtn"
+            data-target="#section03"
+          >
+            next
+          </button>
+        </p>
+      </fieldset>
+
+      <fieldset id="section03">
+        <legend>私とどのような形で会いたいですか？</legend>
+
+        <div>
+          <span>Question 02</span>
+          <h2>私とどのような形で会いたいですか？</h2>
+          <p class="caution">
+            error 2人以上は「グループ」にチェックお願いします。
+          </p>
+        </div>
+
+        <article>
+          <div class="input-box">
+            <input type="radio" name="how_to_meet" id="private" value="個別" />
+            <label for="private">個別</label>
+          </div>
+          <div class="input-box">
+            <input
+              type="radio"
+              name="how_to_meet"
+              id="group"
+              value="グループ"
+            />
+            <label for="group"
+              >グループ（山田、ラン、青山等...自由にチームを組む）</label
+            >
+
+            <div class="check-yes">
+              <label for="group_name">グループ参加者</label>
+              <input
+                type="text"
+                name="group_user_list"
+                id="group_name"
+                placeholder="山田、ラン、青山等..."
+              />
+            </div>
+          </div>
+        </article>
+
+        <p class="button-wrap">
+          <button type="button" class="button" data-target="#section04">
+            next
+          </button>
+        </p>
+      </fieldset>
+
+      <fieldset id="section04">
+        <legend>私と会うために有休を取る気はありますか？</legend>
+
+        <div>
+          <span>Question 03</span>
+          <h2>私と会うために有休を取る気はありますか？</h2>
+        </div>
+
+        <article>
+          <div class="input-box">
+            <input type="radio" name="holiday" id="holiday_yes" value="ある" />
+            <label for="holiday_yes">ある</label>
+          </div>
+          <div class="input-box">
+            <input type="radio" name="holiday" id="holiday_no" value="ない" />
+            <label for="holiday_no">ない</label>
+          </div>
+        </article>
+
+        <p class="button-wrap">
+          <button type="button" class="button" data-target="#section05">
+            next
+          </button>
+        </p>
+      </fieldset>
+
+      <fieldset id="section05">
+        <legend>希望する日を入力してください。</legend>
+
+        <div>
+          <span>Question 04</span>
+          <h2>希望する日を入力してください。</h2>
+        </div>
+
+        <article>
+          <div class="input-box">
+            <label for="meet_oneday">１日</label>
+            <input
+              type="datetime-local"
+              name="meet_date_oneday"
+              id="meet_oneday"
+            />
+          </div>
+
+          <div class="input-box">
+            <label for="meet_twoday">２日以上</label>
+            <input
+              type="text"
+              name="meet_date_twoday"
+              id="meet_twoday"
+              placeholder="10/3、10/10, 10/4~10/5 等"
+            />
+          </div>
+        </article>
+
+        <p class="button-wrap">
+          <button type="submit" class="button" data-target="#sectionLast">
+            next
+          </button>
+        </p>
+      </fieldset>
+
+      <fieldset id="sectionLast">
+        <legend>あなたの名前を教えてください。</legend>
+
+        <div>
+          <span>Last Question</span>
+          <h2>あなたの名前を教えてください。</h2>
+        </div>
+
+        <article>
+          <div class="input-box">
+            <input
+              type="text"
+              name="username"
+              id="holiday_yes"
+              title="name"
+              placeholder="ex: やまだ、ヤマダ、山田OK"
+              required
+            />
+          </div>
+        </article>
+
+        <p class="button-wrap">
+          <button type="submit">Submit</button>
+        </p>
+      </fieldset>
+
+      <!-- ありがとうございます！検討後、連絡しますね！ -->
+      <!--  -->
+
+      <section style="display: none" class="thankyou_message">
+        <h2>
+          <em>Thanks</em> for contacting us! We will get back to you soon!
+        </h2>
+      </section>
     </form>
 
     <iframe id="iframe1" name="iframe1" style="display: none"></iframe>
